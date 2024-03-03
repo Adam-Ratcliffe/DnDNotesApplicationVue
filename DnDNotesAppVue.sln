@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDNotesAppVue.Server", "DnDNotesAppVue.Server\DnDNotesAppVue.Server.csproj", "{7058F32A-6A6C-4C79-9399-719A4F45B338}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dndnotesappvue.client", "dndnotesappvue.client\dndnotesappvue.client.esproj", "{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7058F32A-6A6C-4C79-9399-719A4F45B338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7058F32A-6A6C-4C79-9399-719A4F45B338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7058F32A-6A6C-4C79-9399-719A4F45B338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7058F32A-6A6C-4C79-9399-719A4F45B338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DE6D5E-D3BC-4E7B-9A9C-A2103AD92476}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FE61628-90E5-4F58-A573-75722B184F63}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@DnDNotesAppVue.Server_HostAddress = http://localhost:5198
+
+GET {{DnDNotesAppVue.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
