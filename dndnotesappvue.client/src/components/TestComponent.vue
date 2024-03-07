@@ -31,7 +31,7 @@
                 console.log(b);
                 console.log(JSON.stringify(b));
 
-                fetch('notes', {
+                fetch('/api/notes', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -40,31 +40,22 @@
                 });
             },
             getToTest() {
-                // this.awaitGet();
-                fetch('notes/1')
+                fetch('/api/notes/1')
                     .then(r => r.json())
                     .then(json => {
                         console.log(json);
                     });
             },
-            async awaitGet() {
-                const res = await fetch('notes/1');
-                const json = await res.json();
-                console.log(json);
-            },
-            fetchData() {
-                this.post = null;
-                this.loading = true;
-
-                fetch('weatherforecast')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.post = json;
-                        this.loading = false;
-                        return;
-                    });
-            }
         },
+        mounted() {
+            console.log("STARTUP");
+
+            fetch('api/notes/getall')
+                .then(r => r.json())
+                .then(json => {
+                    console.log(json)
+                });
+        }
     });
 </script>
 

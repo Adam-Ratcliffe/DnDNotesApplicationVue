@@ -9,5 +9,11 @@
         {
             this.Name = name;
         }
+
+        public Note(int id, string name)
+        {
+            this.Id = id;
+            this.Name = name;
+        }
     }
 }

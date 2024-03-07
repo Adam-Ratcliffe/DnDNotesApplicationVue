@@ -6,11 +6,28 @@ using System.IO;
 
 namespace DnDNotesAppVue.Server.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
     {
         const string filename = "test.txt";
+        List<Note> notes;
+
+        [HttpGet("getall")]
+        public List<Note> LoadAllNotes()
+        {
+            StreamReader streamReader = new StreamReader(filename);
+            notes = new List<Note>();
+            string[] lines = streamReader.ReadToEnd().Split('\n');
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                notes.Add(new Note(i, lines[i]));
+            }
+
+            return notes;
+        }
+
         // GET: api/<NotesController>
         [HttpGet]
         public IEnumerable<string> Get()
