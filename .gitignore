@@ -396,4 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-DnDNotesAppVue.Server/appsettings.json
+DnDNotesAppVue.Server/password.txt
