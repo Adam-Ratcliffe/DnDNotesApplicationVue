@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DnDNotesAppVue.Server.Models;
 using System.IO;
+using DnDNotesAppVue.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,9 +12,15 @@ namespace DnDNotesAppVue.Server.Controllers
     public class NotesController : ControllerBase
     {
         const string filename = "test.txt";
-        List<Note> notes;
+        MongoDBService _mongoDBService;
+        List<Note>? notes;
 
-        [HttpGet("getall")]
+        public NotesController(MongoDBService mongoDBService)
+        {
+            _mongoDBService = mongoDBService;
+        }
+        #region
+        /*[HttpGet("getall")]
         public List<Note> LoadAllNotes()
         {
             StreamReader streamReader = new StreamReader(filename);
@@ -67,6 +74,27 @@ namespace DnDNotesAppVue.Server.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }*/
+        #endregion
+
+        [HttpGet("getall")]
+        public async Task<List<Note>> GetAll() 
+        {
+            return await _mongoDBService.GetAsync();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Note note)
+        {
+            await _mongoDBService.CreateAsync(note);
+            return CreatedAtAction(nameof(GetAll), new { id = note.Id }, note);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _mongoDBService.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

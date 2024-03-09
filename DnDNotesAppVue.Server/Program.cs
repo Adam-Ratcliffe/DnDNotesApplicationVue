@@ -1,10 +1,11 @@
 using DnDNotesAppVue.Server.Models;
+using DnDNotesAppVue.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<NotesDatabase>(
-    builder.Configuration.GetSection("NotesDatabase"));
+builder.Services.Configure<NotesDatabase>(builder.Configuration.GetSection("MongoDB"));
+builder.Services.AddSingleton<MongoDBService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

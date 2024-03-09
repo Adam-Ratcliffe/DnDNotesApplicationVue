@@ -3,18 +3,29 @@
         <input v-model="text" />
         <button @click="postToTest">POST</button>
         <button @click="getToTest">GET</button>
+        <div v-for="note in notes">
+            <span>{{ note.id }}</span>
+            <span>{{ note.name }}</span>
+        </div>
+        <div>
+            <p>Create a note</p>
+            <input v-model="newNote"/>
+        </div>
     </div>
 </template>
 
 <script lang="js">
     import { defineComponent } from 'vue';
+    import { ObjectId } from 'bson';
 
     export default defineComponent({
         data() {
             return {
                 loading: false,
                 post: null,
-                text: null
+                text: null,
+                notes: null,
+                newNote: null,
             };
         },
         created() {
@@ -27,7 +38,7 @@
         },
         methods: {
             postToTest() {
-                var b = { "id": 0, "name": "Test text" };
+                var b = { "id": new ObjectId().toString(), "name": this.newNote };
                 console.log(b);
                 console.log(JSON.stringify(b));
 
@@ -53,7 +64,8 @@
             fetch('api/notes/getall')
                 .then(r => r.json())
                 .then(json => {
-                    console.log(json)
+                    console.log(json);
+                    this.notes = json;
                 });
         }
     });
