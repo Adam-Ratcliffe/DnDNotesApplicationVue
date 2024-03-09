@@ -39,5 +39,19 @@ namespace DnDNotesAppVue.Server.Controllers
             await _mongoDBService.CreateCharacterAsync(character);
             return CreatedAtAction(nameof(GetAllCharacters), new { id = character.Id }, character);
         }
+
+        [HttpPut]
+        public async Task UpdateCharacter([FromBody] Character character)
+        {
+            await _mongoDBService.UpdateCharacter(character);
+            return;
+        }
+
+        [HttpDelete("{id}")]
+        public async Task DeleteCharacter(string id)
+        {
+            await _mongoDBService.DeleteCharacterAsync(id);
+            return;
+        }
     }
 }
