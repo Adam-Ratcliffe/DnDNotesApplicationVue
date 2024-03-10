@@ -1,5 +1,5 @@
 <script setup>
-    import CharacterComponent from './components/CharacterComponent.vue';
+    import HomeComponent from './components/HomeComponent.vue';
 </script>
 
 <template>
@@ -7,7 +7,7 @@
     </header>
 
     <main>
-        <CharacterComponent />
+        <HomeComponent />
     </main>
 </template>
 
