@@ -22,14 +22,27 @@ a,
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+    body {
+        display: flex;
+        place-items: center;
+        background: linear-gradient(#FCF5E5, #e6e0d3);
+    }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+  }
+
+  input{
+      border: none;
+  }
+
+  textarea{
+      border: none;
+      font-family: Arial;
+      width: 100%;
+  }
+
+  select{
+      border: none;
   }
 }

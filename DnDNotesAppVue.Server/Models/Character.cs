@@ -31,12 +31,16 @@ namespace DnDNotesAppVue.Server.Models
         public string? Occupation {  get; set; }
         public string? History {  get; set; }
         public string? PhysicalDescription {  get; set; }
+        public string? PartyAttitude { get; set; }
+        public List<string>? LikedCharacters { get; set; }
+        public List<string>? DislikedCharacters {  get; set; }
 
         public Character()
         {
             Id = null;
             Name = null;
             Age = null;
+            Race = "None";
         }
     }
 }
